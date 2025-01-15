@@ -1,6 +1,6 @@
 from typing import Dict
 
-from autogen_core.components.models import ModelCapabilities
+from autogen_core.models import ModelCapabilities
 
 
 class ExtInfo:

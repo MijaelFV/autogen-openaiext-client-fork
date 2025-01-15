@@ -6,7 +6,7 @@ from autogen_openaiext_client.info import GeminiInfo
 from dotenv import load_dotenv
 import os
 import asyncio
-from autogen_core.components.models import UserMessage
+from autogen_core.models import UserMessage
 
 
 def test_gemini():

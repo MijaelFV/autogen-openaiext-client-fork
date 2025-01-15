@@ -15,13 +15,13 @@ from dataclasses import asdict
 import logging
 import warnings
 
-from autogen_core.base import CancellationToken
-from autogen_core.components import FunctionCall, Image
-from autogen_core.components.tools import Tool, ToolSchema
+from autogen_core import CancellationToken
+from autogen_core import FunctionCall, Image
+from autogen_core.tools import Tool, ToolSchema
 from typing_extensions import Unpack
-from autogen_core.application.logging import EVENT_LOGGER_NAME, TRACE_LOGGER_NAME
+from autogen_core import EVENT_LOGGER_NAME, TRACE_LOGGER_NAME
 
-from autogen_core.components.models import (
+from autogen_core.models import (
     ChatCompletionClient,
     RequestUsage,
     LLMMessage,
@@ -32,7 +32,7 @@ from autogen_core.components.models import (
     FunctionExecutionResultMessage,
     ModelCapabilities,
 )
-from autogen_ext.models._openai._openai_client import (
+from autogen_ext.models.openai. import (
     BaseOpenAIChatCompletionClient,
     convert_tools,
     to_oai_type,
@@ -64,7 +64,7 @@ create_kwargs = set(
 
 import asyncio
 
-from autogen_core.components.models import ChatCompletionTokenLogprob, TopLogprob
+from autogen_core.models import ChatCompletionTokenLogprob, TopLogprob
 from pydantic import BaseModel
 from asyncio import Task
 
@@ -83,7 +83,7 @@ class BaseOpenAIExtChatCompletionClient(BaseOpenAIChatCompletionClient):
         model_info: Optional = None,
     ):
         self._client = client
-        self.model_info = model_info
+        self._model_info = model_info
         if model_capabilities is None:
             self._model_capabilities = model_info.get_capabilities(create_args["model"])
         else:

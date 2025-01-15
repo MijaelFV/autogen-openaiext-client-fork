@@ -1,8 +1,8 @@
 from typing import Optional, Dict, List, Union
 
 from typing_extensions import TypedDict
-from autogen_core.components.models import ModelCapabilities
-from autogen_ext.models._openai.config import CreateArguments
+from autogen_core.models import ModelCapabilities
+from autogen_ext.models.openai.config import CreateArguments
 
 
 class OpenAIExtClientConfiguration(CreateArguments, total=False):

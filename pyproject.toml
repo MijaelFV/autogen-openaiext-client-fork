@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "autogen_openaiext_client"
 version = "0.0.1.dev1"
 dependencies = [
-    "autogen-core>=0.4.0.dev6,<0.5", # TODO: remove dev tag after release
+    "autogen-core>=0.4.0.dev10,<0.5", # TODO: remove dev tag after release
 ]
 requires-python = ">=3.10, <3.13"
 description = "This is an autogen>=0.4 extension for integrating external models through the OpenAI API."
